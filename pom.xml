@@ -1,113 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">  
-  <modelVersion>4.0.0</modelVersion>  
-  <parent> 
-    <groupId>org.springframework.boot</groupId>  
-    <artifactId>spring-boot-starter-parent</artifactId>  
-    <version>3.0.0-SNAPSHOT</version>  
-    <relativePath/>  
-    <!-- lookup parent from repository --> 
-  </parent>  
-  <groupId>igdxserv</groupId>  
-  <artifactId>TechLabo4SpringBoot</artifactId>  
-  <version>0.0.1-SNAPSHOT</version>  
-  <name>TechLabo4SpringBoot</name>  
-  <description>Demo project for Spring Boot</description>  
-  <properties> 
-    <java.version>17</java.version> 
-  </properties>  
-  <dependencies> 
-    <dependency> 
-      <groupId>org.springframework.boot</groupId>  
-      <artifactId>spring-boot-starter-thymeleaf</artifactId> 
-    </dependency>  
-    <dependency> 
-      <groupId>org.springframework.boot</groupId>  
-      <artifactId>spring-boot-starter-web</artifactId> 
-    </dependency>  
-    <dependency> 
-      <groupId>org.springframework.boot</groupId>  
-      <artifactId>spring-boot-devtools</artifactId>  
-      <scope>runtime</scope>  
-      <optional>true</optional> 
-    </dependency>  
-    <dependency> 
-      <groupId>org.springframework.boot</groupId>  
-      <artifactId>spring-boot-starter-test</artifactId>  
-      <scope>test</scope> 
-    </dependency> 
-  </dependencies>  
-  <build> 
-    <plugins> 
-      <plugin> 
-        <groupId>org.springframework.boot</groupId>  
-        <artifactId>spring-boot-maven-plugin</artifactId> 
-      </plugin>  
-      <plugin> 
-        <groupId>com.microsoft.azure</groupId>  
-        <artifactId>azure-webapp-maven-plugin</artifactId>  
-        <version>2.5.0</version>  
-        <configuration> 
-          <schemaVersion>v2</schemaVersion>  
-          <subscriptionId>3f32112c-a69d-4553-b09e-1366f775ebcb</subscriptionId>  
-          <resourceGroup>TechLabo4SpringBoot-1666017077302-rg</resourceGroup>  
-          <appName>TechLabo4SpringBoot-1666017077302</appName>  
-          <pricingTier>F1</pricingTier>  
-          <region>centralus</region>  
-          <runtime> 
-            <os>Windows</os>  
-            <javaVersion>Java 17</javaVersion>  
-            <webContainer>Java SE</webContainer> 
-          </runtime>  
-          <deployment> 
-            <resources> 
-              <resource> 
-                <directory>${project.basedir}/target</directory>  
-                <includes> 
-                  <include>*.jar</include> 
-                </includes> 
-              </resource> 
-            </resources> 
-          </deployment> 
-        </configuration> 
-      </plugin> 
-    </plugins> 
-  </build>  
-  <repositories> 
-    <repository> 
-      <id>spring-milestones</id>  
-      <name>Spring Milestones</name>  
-      <url>https://repo.spring.io/milestone</url>  
-      <snapshots> 
-        <enabled>false</enabled> 
-      </snapshots> 
-    </repository>  
-    <repository> 
-      <id>spring-snapshots</id>  
-      <name>Spring Snapshots</name>  
-      <url>https://repo.spring.io/snapshot</url>  
-      <releases> 
-        <enabled>false</enabled> 
-      </releases> 
-    </repository> 
-  </repositories>  
-  <pluginRepositories> 
-    <pluginRepository> 
-      <id>spring-milestones</id>  
-      <name>Spring Milestones</name>  
-      <url>https://repo.spring.io/milestone</url>  
-      <snapshots> 
-        <enabled>false</enabled> 
-      </snapshots> 
-    </pluginRepository>  
-    <pluginRepository> 
-      <id>spring-snapshots</id>  
-      <name>Spring Snapshots</name>  
-      <url>https://repo.spring.io/snapshot</url>  
-      <releases> 
-        <enabled>false</enabled> 
-      </releases> 
-    </pluginRepository> 
-  </pluginRepositories> 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.0-SNAPSHOT</version>
+        <relativePath/>
+        <!-- lookup parent from repository -->
+    </parent>
+    <groupId>igdxserv</groupId>
+    <artifactId>TechLabo4SpringBoot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>TechLabo4SpringBoot</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.microsoft.azure</groupId>
+                <artifactId>azure-webapp-maven-plugin</artifactId>
+                <version>2.5.0</version>
+                <configuration>
+                    <schemaVersion>v2</schemaVersion>
+                    <subscriptionId>3f32112c-a69d-4553-b09e-1366f775ebcb</subscriptionId>
+                    <resourceGroup>TechLabo4SpringBoot-1666017077302-rg</resourceGroup>
+                    <appName>TechLabo4SpringBoot-1666017077302</appName>
+                    <pricingTier>F1</pricingTier>
+                    <region>centralus</region>
+                    <runtime>
+                        <os>Windows</os>
+                        <javaVersion>Java 17</javaVersion>
+                        <webContainer>Java SE</webContainer>
+                    </runtime>
+                    <deployment>
+                        <resources>
+                            <resource>
+                                <directory>${project.basedir}/target</directory>
+                                <includes>
+                                    <include>*.jar</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </deployment>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
