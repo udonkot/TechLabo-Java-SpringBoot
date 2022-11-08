@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout::layout(~{::body/content()})}">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body id="main">
+<div>
+  <h1>kondo Room List</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>String</th>
+      <th>int</th>
+      <th>long</th>
+      <th>boolean</th>
+      <th>date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sample: ${sampleList}">
+      <td th:text=${sample.text}></td>
+      <td th:text=${sample.num}></td>
+      <td th:text=${sample.cnt}></td>
+      <td th:text=${sample.isFlg}></td>
+      <td th:text=${sample.regDate}></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
