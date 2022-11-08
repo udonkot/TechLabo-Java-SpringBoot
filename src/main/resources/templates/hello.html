@@ -2,12 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org"
       th:replace="~{layout::layout(~{::body/content()})}">
 <head>
-    <meta charset="UTF-8">
-    <link th:href="@{/css/layout.css}" rel="stylesheet">
-    <title>Insert title here</title>
+  <meta charset="UTF-8">
+  <link th:href="@{/css/layout.css}" rel="stylesheet">
+  <title>Insert title here</title>
 </head>
 <body id="main">
-<div>コンテンツ内容</div>
-<h1 th:text="${message}"></h1> aaa
+<div>
+  Sample Message
+  <h1 th:text="${message}"></h1>
+</div>
 </body>
 </html>

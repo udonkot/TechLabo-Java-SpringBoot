@@ -2,11 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org"
       th:replace="~{layout::layout(~{::body/content()})}">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 </head>
 <body id="main">
 <div>kondo's Room Main
-    <h1 th:text="${message}"></h1>
+  <h1 th:text="${message}"></h1>
+  <a href="/kondo/list">sample Table</a>
 </div>
 </body>
 </html>
