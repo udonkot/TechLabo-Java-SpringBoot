@@ -15,21 +15,21 @@ import java.util.List;
 // import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-// @EnableAutoConfiguration
+@RequestMapping("rooms/kondo")
 public class KondoController {
 
     @Autowired
     IKondoService kondoService;
 
-    @RequestMapping("/kondo")
-    public String kondo(Model model) {
+    @RequestMapping("home")
+    public String home(Model model) {
         String name = kondoService.getName(" Page!");
         String message = "Hello ".concat(name);
         model.addAttribute("message", message);
         return "rooms/kondo/main";
     }
 
-    @RequestMapping("/kondo/list")
+    @RequestMapping("list")
     public String list(Model model) {
         List<SampleDto> sampleDtoList = new ArrayList<>();
 
