@@ -3,6 +3,7 @@ package igdxserv.TechLabo4SpringBoot.rooms.kondo.controller;
 //import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import igdxserv.TechLabo4SpringBoot.rooms.kondo.dto.SampleDto;
+import igdxserv.TechLabo4SpringBoot.rooms.kondo.record.SlackChannelRerocd;
 import igdxserv.TechLabo4SpringBoot.rooms.kondo.service.IKondoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ public class KondoController {
 
     @Autowired
     IKondoService kondoService;
+
 
     @RequestMapping("home")
     public String home(Model model) {
@@ -39,6 +41,14 @@ public class KondoController {
 
         model.addAttribute("sampleList", sampleDtoList);
         return "rooms/kondo/list";
+    }
+
+    @RequestMapping("slackapi/channel")
+    public String slackapiChannelList(Model model) {
+        List<SlackChannelRerocd> channnelList = kondoService.getChannlelList();
+        model.addAttribute("channelList", channnelList);
+
+        return "rooms/kondo/slackapi/channel";
     }
 
     private SampleDto createData(String text, int num, long cnt, boolean flg) {
