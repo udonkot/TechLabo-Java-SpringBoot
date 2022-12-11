@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout::layout(~{::body/content()})}">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body id="main">
+<div>
+  <h1>kondo Room SlackAPIサンプル(チャンネル一覧)</h1>
+  <div style="height:200px; overflow-y: scroll">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>チャンネルID</th>
+        <th>チャンネル名</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="channel: ${channelList}">
+        <td th:text=${channel.channel_id}></td>
+        <td th:text=${channel.channel_name}></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

@@ -3,6 +3,9 @@ package igdxserv.TechLabo4SpringBoot.rooms.kondo.dto;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * サンプルDTO
+ */
 public class SampleDto {
 
     private String text = null;
