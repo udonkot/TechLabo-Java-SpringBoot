@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout::layout(~{::body/content()})}">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body id="main">
+<div>
+  <h2>SlackAPI検証 リアクション集計(チャンネル毎)</h2>
+ モック表示</br>
+
+  <div class="input">
+    <h3>■集計条件</h3>
+    <form th:action="@{summary}" th:object="${requestDto}" method="post">
+      <table class="table">
+        <tr>
+          <th>チャンネルID</th>
+          <td><input type="text" th:field=${requestDto.channelId}></td>
+        </tr>
+        <tr>
+          <th>集計月</th>
+          <td><input type="text" th:field=${requestDto.month}></td>
+        </tr>
+        </tbody>
+      </table>
+      <input type="submit" value="集計"/>
+    </form>
+  </div>
+  </br>
+  <th:block th:if="${reactionList != null}">
+    <div class="output" style="height:200px; overflow-y: scroll">
+      <h3>■集計結果</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>順位</th>
+          <th>リアクション名</th>
+          <th>画像</th>
+          <th>使用回数</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="reaction: ${reactionList}">
+          <td th:text=${reaction.rank}></td>
+          <td th:text=${reaction.reactionName}></td>
+          <td th:text=${reaction.reactionGif}></td>
+          <td th:text=${reaction.reactionCnt}></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </th:block>
+</div>
+</body>
+</html>
