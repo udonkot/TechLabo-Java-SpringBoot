@@ -1,4 +1,4 @@
-package igdxserv.TechLabo4SpringBoot.rooms.kobayashi.controller;
+package igdxserv.TechLabo4SpringBoot.rooms.kondo.controller.kobayashi;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
