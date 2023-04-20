@@ -1,12 +1,12 @@
-package igdxserv.TechLabo4SpringBoot.rooms.slackapi.service;
+package igdxserv.TechLabo4SpringBoot.rooms.slackapi.service.users;
 
 import com.slack.api.Slack;
 import com.slack.api.methods.MethodsClient;
 import com.slack.api.methods.response.users.UsersListResponse;
 import igdxserv.TechLabo4SpringBoot.rooms.slackapi.dto.Member;
 import igdxserv.TechLabo4SpringBoot.rooms.slackapi.dto.MemberProfile;
-import org.json.JSONObject;
-import org.springframework.context.annotation.Profile;
+import igdxserv.TechLabo4SpringBoot.rooms.slackapi.service.common.MethodClientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,22 +15,22 @@ import java.util.List;
 @Service
 public class SlackApiUsersService implements ISlackApiUsersService{
 
+    @Autowired
+    MethodClientService methodClientService;
+
     // トークンID取得
     private static final String SLACK_TOKEN = System.getenv("SLACK_TOKEN");
 
     @Override
     public List<Member> getUserList() {
 
-        // slackインスタンス作成
-        Slack slack = Slack.getInstance();
-
         // レスポンスのJSONデータ格納用
         List<Member> usersList = new ArrayList<>();
 
         try {
             // slackクライアント取得
-            MethodsClient client = slack.methods();
-            UsersListResponse res = client.usersList(r -> r.token(SLACK_TOKEN));
+            MethodsClient client = methodClientService.getMethodsClient();
+            UsersListResponse res = client.usersList(r -> r.token(methodClientService.getSlackToken()));
 
             res.getMembers().stream().filter(m -> !m.isDeleted()).forEach(member -> {
                 // レスポンスデータセット

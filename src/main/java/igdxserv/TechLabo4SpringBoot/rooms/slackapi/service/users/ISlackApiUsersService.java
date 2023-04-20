@@ -1,4 +1,4 @@
-package igdxserv.TechLabo4SpringBoot.rooms.slackapi.service;
+package igdxserv.TechLabo4SpringBoot.rooms.slackapi.service.users;
 
 import igdxserv.TechLabo4SpringBoot.rooms.slackapi.dto.Member;
 
