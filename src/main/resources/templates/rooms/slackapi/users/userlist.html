@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout::layout(~{::body/content()})}">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body id="main">
+<div>
+  <h2>SlackAPI検証 ユーザ一覧</h2>
+  users.listの実行結果を出力</br>
+  </br>
+  <h3>■取得結果</h3>
+  <th:block th:if="${ members != null}">
+    <div class="output" style="height:500px; overflow-y: auto">
+      <table class="table">
+        <thead class="sticky-top bg-white">
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>real_name</th>
+          <th>display_name</th>
+          <th>status_text</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="member: ${members}">
+          <td th:text=${member.id}></td>
+          <td th:text=${member.name}></td>
+          <td th:text=${member.real_name}></td>
+          <td th:text=${member.profile.display_name}></td>
+          <td th:text=${member.profile.status_text}></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </th:block>
+</div>
+</body>
+</html>
