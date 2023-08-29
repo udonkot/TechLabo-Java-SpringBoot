@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout::layout(~{::body/content()})}">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body id="main">
+<div>SOAP WEB サービス</div>
+<h2>SOAP APIレスポンス確認</h2>
+<h4>【コマンド】</h4>
+<p>①request.xmlの6行目にCountryRepository.javaの国名を入れる</p>
+<p>②コマンドプロンプトで以下のコマンドを実行する<br>
+    <code>curl --header "content-type: text/xml" -d @request.xml http://localhost:8080/ws</code></p>
+<p>③レスポンスが表示される<br>
+    CountryRepository.javaで設定した内容が返ってきたらOK</p><br>
+<h4>【SOAP UI】</h4>
+<p>①SOAP UIをダウンロード<br>
+    <a href="https://www.soapui.org/downloads/soapui/">SoapUI Open Source</a></p>
+<p>②SOAP UIを起動してプロジェクトを作成する<br>
+    New SOAP Project<br>
+    Project Name:Web Service Test<br>
+    Initial WSDL:http://localhost:8080/ws/countries.wsdl<br>
+<p>③SOAPリクエストの送信<br>
+    作成したプロジェクトをダブルクリックし<br>
+    左側に表示されたSOAPメッセージのnameを<br>
+    CountryRepository.javaの国名に書き換え<br>
+    緑色の実行ボタンをクリック
+</p>
+<p>④SOAPレスポンスの確認<br>
+    右側に表示されたSOAPレスポンスを確認<br>
+    CountryRepository.javaで設定した内容が返ってきたらOK
+</p>
+</body>
+</html>
