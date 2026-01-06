@@ -14,7 +14,7 @@ import java.util.List;
 public class KondoService implements IKondoService {
 
     // トークンID取得
-    private static final String SLACK_TOKEN = System.getenv("SLACK_TOKEN");
+    private static final String SLACK_TOKEN = System.getenv("SLACK_APP_TOKEN");
 
     public String getName(String name) {
         return "Kondo".concat(name);
